@@ -1,6 +1,7 @@
 from app import app
 from flask import jsonify
 import requests
+import os
 
 # Define route "/api".
 @app.route('/api')
@@ -10,6 +11,6 @@ def api():
 
 @app.route('/api/app1')
 def cross():
-  x = requests.get('http://localhost:6969/api')
+  x = requests.get('http://localhost:'+os.getenv('PORT1')+'/api')
   return jsonify(x.json())
 

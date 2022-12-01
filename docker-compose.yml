@@ -1,0 +1,24 @@
+version: '3.1'
+
+services:
+ app1:
+   image: app1image 
+   ports:
+     - '5555:5555'
+   environment: 
+     - PORT1=5555
+     - PORT2=6666
+   expose: 
+     - '5555'
+   network_mode: host
+
+ app2:
+    image: app2image
+    ports:
+      - '6666:6666'
+    environment:
+      - PORT1=5555
+      - PORT2=6666
+    expose:
+      - '6666'
+    network_mode: host

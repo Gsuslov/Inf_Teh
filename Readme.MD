@@ -1,12 +1,10 @@
-term1:
-python3 app1/run.py
+restart docker
+docker build . -t app1image
+docker build . -t app2image
 
-term2:
-python3 app2/run.py
+start dockerc-compose
+sudo docker-compose up
 
-term3:
-curl localhost:6969/api
-curl localhost:6969/api/app2
-
-curl localhost:7777/api
-curl localhost:7777/api/app1
+term3
+localhost/app2/api -вызов метода из 2 приложения 
+localhost:5555/api/app2 - вызов метода из 2 приложения первым
